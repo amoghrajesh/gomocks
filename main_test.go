@@ -1,12 +1,14 @@
 package main
 
-import "testing"
-import "github.com/golang/mock/gomock"
+import (
+	"github.com/golang/mock/gomock"
+	"gomocks/myinterface"
+	"testing"
+)
 
-func Test_realImpl_foo(t *testing.T) {
+func Test_realImplementation_getHttpClient(t *testing.T) {
 	ctrl := gomock.NewController(t)
-	m := NewMockmyInterface(ctrl)
 
-	m.EXPECT().foo(gomock.Eq(1), gomock.Eq("abcd")).Return()
-
+	m := myinterface.NewMockMyInterface(ctrl)
+	m.EXPECT().SomeMethod(1, "abcd")
 }
