@@ -2,7 +2,7 @@
 // Source: myinterface/myinterface.go
 
 // Package mock_myinterface is a generated GoMock package.
-package myinterface
+package mock_myinterface
 
 import (
 	reflect "reflect"
@@ -33,14 +33,16 @@ func (m *MockMyInterface) EXPECT() *MockMyInterfaceMockRecorder {
 	return m.recorder
 }
 
-// SomeMethod mocks base method.
-func (m *MockMyInterface) SomeMethod(i int, s string) {
+// IsUnder16 mocks base method.
+func (m *MockMyInterface) IsUnder16(i int) bool {
 	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SomeMethod", i, s)
+	ret := m.ctrl.Call(m, "IsUnder16", i)
+	ret0, _ := ret[0].(bool)
+	return ret0
 }
 
-// SomeMethod indicates an expected call of SomeMethod.
-func (mr *MockMyInterfaceMockRecorder) SomeMethod(i, s interface{}) *gomock.Call {
+// IsUnder16 indicates an expected call of IsUnder16.
+func (mr *MockMyInterfaceMockRecorder) IsUnder16(i interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SomeMethod", reflect.TypeOf((*MockMyInterface)(nil).SomeMethod), i, s)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsUnder16", reflect.TypeOf((*MockMyInterface)(nil).IsUnder16), i)
 }

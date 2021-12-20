@@ -1,22 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
+import "fmt"
 
-type realImplementation struct {
-	httpClient http.Client
-}
+type reaImpl struct{}
 
-func (r realImplementation) getHttpClient() {
-	r.httpClient = http.Client{}
+func (r reaImpl) IsUnder16(i int) bool {
+	fmt.Println("Value of i is", i)
+	return i < 16
 }
 
 func main() {
-	r := realImplementation{}
-	r.getHttpClient()
-
-	resp, _ := r.httpClient.Get("https://google.com")
-	fmt.Println(resp)
+	fmt.Println("Inside main")
 }

@@ -1,5 +1,5 @@
 package myinterface
 
 type MyInterface interface {
-	SomeMethod(i int, s string)
+	IsUnder16(i int) bool
 }
